@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Kartik Rawat</title>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><div class="brand-box"><span>KR</span></div><div class="brand-text"><span class="brand-top">KARTIK</span><span class="brand-bottom">RAWAT</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="login.html" class="btn-login">Login</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <div class="projects-hero">
+    <div class="projects-hero-inner">
+      <div class="section-badge" style="background:rgba(255,101,132,0.15);color:#FF6584;">My Work</div>
+      <h1>Featured <span>Projects</span></h1>
+      <p>Things I have built with passion</p>
+    </div>
+  </div>
+
+  <div class="projects-content">
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-img">
+          <div class="project-img-bg grad1">🌐</div>
+          <div class="project-overlay">
+            <a href="https://bekartikrawat.vercel.app/" target="_blank" class="overlay-btn"><i class="fas fa-eye"></i> Live</a>
+            <a href="https://github.com/bekartikrawat" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-badge">Full Stack</div>
+          <h3>Portfolio Website</h3>
+          <p>A personal portfolio website built with HTML, CSS, JavaScript and Node.js backend. Features dark mode, AI chat assistant, admin dashboard, and real-time messaging.</p>
+          <div class="project-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Node.js</span><span>MongoDB</span><span>Socket.io</span>
+          </div>
+          <div class="project-links">
+            <a href="https://bekartikrawat.vercel.app/" target="_blank" class="btn-primary" style="font-size:13px;padding:0.5rem 1.2rem;">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/bekartikrawat" target="_blank" class="btn-outline" style="font-size:13px;padding:0.5rem 1.2rem;">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-img">
+          <div class="project-img-bg grad2">🚀</div>
+          <div class="project-overlay">
+            <a href="https://bekartikrawat.vercel.app/" target="_blank" class="overlay-btn"><i class="fas fa-eye"></i> Live</a>
+            <a href="https://github.com/bekartikrawat" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-badge">Full Stack</div>
+          <h3>BE Kartik Rawat</h3>
+          <p>A full stack web application with Express.js backend, MongoDB database, real-time chat using Socket.io, JWT authentication, and a complete admin panel for management.</p>
+          <div class="project-tags">
+            <span>Node.js</span><span>Express</span><span>MongoDB</span><span>Socket.io</span><span>JWT</span>
+          </div>
+          <div class="project-links">
+            <a href="https://bekartikrawat.vercel.app/" target="_blank" class="btn-primary" style="font-size:13px;padding:0.5rem 1.2rem;">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/bekartikrawat" target="_blank" class="btn-outline" style="font-size:13px;padding:0.5rem 1.2rem;">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2025 <span>Kartik Rawat</span>. All rights reserved. Made with ❤️</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

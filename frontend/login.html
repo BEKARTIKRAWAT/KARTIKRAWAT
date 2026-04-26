@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Kartik Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+ 
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f5f4fe;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      width: 860px;
+      min-height: 520px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(83, 74, 184, 0.18);
+    }
+
+    /* ── Left Panel ── */
+    .left {
+      flex: 1;
+      background: #5344b8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .left::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3rem;
+      letter-spacing: -0.3px;
+    }
+
+    .brand span { opacity: 0.5; }
+
+    .left h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.5px;
+    }
+
+    .left p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 230px;
+    }
+
+    .dot-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 9px;
+      margin-top: 2.5rem;
+      opacity: 0.2;
+    }
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* ── Right Panel ── */
+    .right {
+      flex: 1.2;
+      background: #fff;
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 0.3rem;
+    }
+
+    .right .sub {
+      font-size: 13.5px;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    .field-wrap { margin-bottom: 1.2rem; }
+
+    .field-label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 500;
+      color: #888;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .field-input {
+      width: 100%;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid #e4e2f8;
+      background: #faf9ff;
+      color: #1a1a2e;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      padding: 0 14px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .field-input::placeholder { color: #bbb; }
+
+    .field-input:focus {
+      border-color: #5344b8;
+      box-shadow: 0 0 0 3px rgba(83, 74, 184, 0.12);
+      background: #fff;
+    }
+
+    .forgot-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .forgot {
+      font-size: 12.5px;
+      color: #5344b8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .forgot:hover { text-decoration: underline; }
+
+    .btn-login {
+      width: 100%;
+      height: 44px;
+      border-radius: 10px;
+      background: #5344b8;
+      color: #fff;
+      font-size: 14.5px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-login:hover { background: #3c3489; }
+    .btn-login:active { transform: scale(0.98); }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 1.4rem 0;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: #eeecfa;
+    }
+
+    .divider span {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .register-row {
+      text-align: center;
+      font-size: 13.5px;
+      color: #888;
+    }
+
+    .register-row a {
+      color: #5344b8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .register-row a:hover { text-decoration: underline; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      body { padding: 1rem; }
+      .container { flex-direction: column; width: 100%; border-radius: 14px; }
+      .left { padding: 2rem 1.5rem; min-height: 180px; }
+      .left h1 { font-size: 22px; }
+      .right { padding: 2rem 1.5rem; }
+      .dot-grid { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Left -->
+    <div class="left">
+      <div class="brand">Kartik<span>.</span></div>
+      <h1>Welcome<br/>back 👋</h1>
+      <p>Sign in to access your portfolio dashboard and manage your projects.</p>
+      <div class="dot-grid">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="right">
+      <h2>Sign in</h2>
+      <p class="sub">Enter your credentials to continue</p>
+
+      <div class="field-wrap">
+        <label class="field-label" for="email">Email</label>
+        <input class="field-input" id="email" type="email" placeholder="kartikrawat333@gmail.com" />
+      </div>
+
+      <div class="field-wrap">
+        <label class="field-label" for="password">Password</label>
+        <input class="field-input" id="password" type="password" placeholder="••••••••" />
+      </div>
+
+      <div class="forgot-row">
+        <a href="#" class="forgot">Forgot password?</a>
+      </div>
+
+      <button class="btn-login" onclick="handleLogin()">Sign in</button>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span>or</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="register-row">
+        Don't have an account? <a href="#">Register</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function handleLogin() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (!email || !password) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      alert('Login successful! (Connect your backend here)');
+    }
+  </script>
+
+</body>
+</html>

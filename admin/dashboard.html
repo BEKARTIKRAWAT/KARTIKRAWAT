@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f1a; color: #e0e0e0; }
+
+    /* Login */
+    .login-screen {
+      display: flex; justify-content: center; align-items: center; height: 100vh;
+      background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+    }
+    .login-card {
+      background: #1e1e30; padding: 2.5rem; border-radius: 16px;
+      width: 380px; border: 1px solid #2a2a40;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .login-card h2 { font-size: 1.5rem; margin-bottom: 0.3rem; color: white; }
+    .login-card p { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .input-group { margin-bottom: 1rem; }
+    .input-group label { font-size: 0.8rem; color: #aaa; display: block; margin-bottom: 6px; }
+    .input-group input {
+      width: 100%; padding: 12px 16px; background: #12121e;
+      border: 1px solid #2a2a40; border-radius: 8px; color: white;
+      font-size: 0.9rem; outline: none; transition: border 0.3s;
+    }
+    .input-group input:focus { border-color: #6c63ff; }
+    .login-btn {
+      width: 100%; padding: 12px; background: linear-gradient(135deg, #6c63ff, #ff6584);
+      border: none; border-radius: 8px; color: white; font-size: 1rem;
+      cursor: pointer; margin-top: 0.5rem; transition: opacity 0.3s;
+    }
+    .login-btn:hover { opacity: 0.9; }
+    .error { color: #ff6584; font-size: 0.8rem; margin-top: 8px; }
+
+    /* Navbar */
+    .navbar {
+      background: #1e1e30; padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid #2a2a40; position: sticky; top: 0; z-index: 100;
+    }
+    .navbar-brand { display: flex; align-items: center; gap: 10px; }
+    .navbar-brand h1 { font-size: 1.1rem; color: white; }
+    .navbar-brand span { background: #6c63ff; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; }
+    .logout-btn {
+      background: transparent; border: 1px solid #ff6584; color: #ff6584;
+      padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .logout-btn:hover { background: #ff6584; color: white; }
+
+    /* Container */
+    .container { padding: 2rem; max-width: 1100px; margin: 0 auto; }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card {
+      background: #1e1e30; padding: 1.5rem; border-radius: 12px;
+      border: 1px solid #2a2a40; display: flex; align-items: center; gap: 1rem;
+    }
+    .stat-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .stat-icon.purple { background: rgba(108,99,255,0.2); color: #6c63ff; }
+    .stat-icon.pink { background: rgba(255,101,132,0.2); color: #ff6584; }
+    .stat-icon.green { background: rgba(67,233,123,0.2); color: #43e97b; }
+    .stat-info h2 { font-size: 1.8rem; font-weight: 700; color: white; }
+    .stat-info p { font-size: 0.8rem; color: #888; }
+
+    /* Messages */
+    .messages-section { background: #1e1e30; border-radius: 12px; border: 1px solid #2a2a40; overflow: hidden; }
+    .messages-header {
+      padding: 1.2rem 1.5rem; border-bottom: 1px solid #2a2a40;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .messages-header h3 { color: white; font-size: 1rem; }
+    .refresh-btn {
+      background: rgba(108,99,255,0.2); border: none; color: #6c63ff;
+      padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;
+    }
+    .messages-list { padding: 1rem; display: flex; flex-direction: column; gap: 0.8rem; max-height: 600px; overflow-y: auto; }
+    .message-card {
+      padding: 1rem 1.2rem; border-radius: 10px; border: 1px solid #2a2a40;
+      transition: border 0.2s;
+    }
+    .message-card:hover { border-color: #6c63ff; }
+    .message-card.user { background: rgba(108,99,255,0.05); }
+    .message-card.assistant { background: rgba(67,233,123,0.05); }
+    .message-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 8px;
+    }
+    .message-role {
+      font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 20px;
+    }
+    .message-role.user { background: rgba(108,99,255,0.2); color: #6c63ff; }
+    .message-role.assistant { background: rgba(67,233,123,0.2); color: #43e97b; }
+    .message-time-stamp { font-size: 0.72rem; color: #555; }
+    .message-content { font-size: 0.85rem; color: #ccc; line-height: 1.6; }
+    .session-id { font-size: 0.7rem; color: #444; margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+<!-- Login -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <h2>🔐 Admin Panel</h2>
+    <p>BEKARTIKRAWAT Dashboard</p>
+    <div class="input-group">
+      <label>Username</label>
+      <input type="text" id="username" placeholder="Enter username" />
+    </div>
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter password" onkeypress="if(event.key==='Enter') login()" />
+    </div>
+    <button class="login-btn" onclick="login()">Login to Dashboard</button>
+    <p class="error" id="loginError"></p>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" style="display:none;">
+  <div class="navbar">
+    <div class="navbar-brand">
+      <h1>📊 Dashboard</h1>
+      <span>BEKARTIKRAWAT</span>
+    </div>
+    <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </div>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-icon purple"><i class="fas fa-comments"></i></div>
+        <div class="stat-info">
+          <h2 id="totalMessages">0</h2>
+          <p>Total Messages</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon pink"><i class="fas fa-users"></i></div>
+        <div class="stat-info">
+          <h2 id="totalUsers">0</h2>
+          <p>Unique Sessions</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"><i class="fas fa-calendar-day"></i></div>
+        <div class="stat-info">
+          <h2 id="todayMessages">0</h2>
+          <p>Today's Messages</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="messages-section">
+      <div class="messages-header">
+        <h3>💬 All Conversations</h3>
+        <button class="refresh-btn" onclick="loadMessages()"><i class="fas fa-sync-alt"></i> Refresh</button>
+      </div>
+      <div class="messages-list" id="messagesList"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const API = "http://localhost:5000";
+  let token = localStorage.getItem("adminToken");
+  if (token) showDashboard();
+
+  async function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const res = await fetch(`${API}/api/admin/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    });
+    const data = await res.json();
+    if (data.success) {
+      localStorage.setItem("adminToken", data.token);
+      token = data.token;
+      showDashboard();
+    } else {
+      document.getElementById("loginError").textContent = "❌ Invalid credentials!";
+    }
+  }
+
+  async function showDashboard() {
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+    await loadMessages();
+  }
+
+  async function loadMessages() {
+    const res = await fetch(`${API}/api/chat/messages`);
+    const messages = await res.json();
+    const list = document.getElementById("messagesList");
+    list.innerHTML = "";
+    const sessions = new Set(messages.map(m => m.sessionId));
+    const today = new Date().toDateString();
+    const todayMsgs = messages.filter(m => new Date(m.createdAt).toDateString() === today);
+    document.getElementById("totalMessages").textContent = messages.length;
+    document.getElementById("totalUsers").textContent = sessions.size;
+    document.getElementById("todayMessages").textContent = todayMsgs.length;
+    messages.reverse().forEach(msg => {
+      const card = document.createElement("div");
+      card.className = `message-card ${msg.role}`;
+      card.innerHTML = `
+        <div class="message-meta">
+          <span class="message-role ${msg.role}">${msg.role === "user" ? "👤 User" : "🤖 AI"}</span>
+          <span class="message-time-stamp">${new Date(msg.createdAt).toLocaleString()}</span>
+        </div>
+        <div class="message-content">${msg.content}</div>
+        <div class="session-id">Session: ${msg.sessionId}</div>
+      `;
+      list.appendChild(card);
+    });
+  }
+
+  function logout() {
+    localStorage.removeItem("adminToken");
+    location.reload();
+  }
+</script>
+</body>
+</html>
