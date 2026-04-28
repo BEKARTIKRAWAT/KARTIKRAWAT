@@ -25,7 +25,7 @@ let isMinimized = false;
 let isTyping = false;
 
 // Backend URL - baad mein change karenge
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "https://kartikrawat.onrender.com";
 
 // ============================================
 // 3. OPEN / CLOSE CHAT

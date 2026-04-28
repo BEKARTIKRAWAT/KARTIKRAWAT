@@ -26,7 +26,9 @@ const io = new Server(server, {
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json());
 app.use(limiter);
 
@@ -52,4 +54,6 @@ io.on("connection", (socket) => {
 });
 
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`Server running on port  http://localhost:${PORT} 🚀`));
+server.listen(PORT, () => console.log(`Server running on port  https://kartikrawat.onrender.com
+
+PORT} 🚀`));
