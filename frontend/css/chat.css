@@ -3,7 +3,16 @@
    WhatsApp Style Chat UI
    ============================================ */
 
-/* ---- Chat Float Button (Neeche wala button) ---- */
+/* CSS Variables Fix */
+:root {
+  --primary: #6c63ff;
+  --secondary: #a855f7;
+  --bg-card: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --text-light: #718096;
+}
 .chat-float-btn {
   position: fixed;
   bottom: 30px;

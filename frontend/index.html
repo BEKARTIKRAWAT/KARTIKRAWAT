@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kartik Rawat | Full Stack Developer</title>
   <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="stylesheet" href="/css/chat.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
@@ -47,7 +48,7 @@
       </div>
       <div class="hero-stats">
         <div class="stat">
-          <h3>2+</h3>
+          <h3>1+</h3>
           <p>Years Coding</p>
         </div>
         <div class="stat">
@@ -55,7 +56,7 @@
           <p>Projects Done</p>
         </div>
         <div class="stat">
-          <h3>6+</h3>
+          <h3>5+</h3>
           <p>Technologies</p>
         </div>
       </div>
@@ -99,7 +100,6 @@
     <div class="strip-item"><div class="strip-dot"></div>PHP</div>
     <div class="strip-item"><div class="strip-dot"></div>SQL</div>
     <div class="strip-item"><div class="strip-dot"></div>Git & GitHub</div>
-    <!-- duplicate for seamless scroll -->
     <div class="strip-item"><div class="strip-dot"></div>HTML5</div>
     <div class="strip-item"><div class="strip-dot"></div>CSS3</div>
     <div class="strip-item"><div class="strip-dot"></div>JavaScript</div>
@@ -117,6 +117,36 @@
   <p>© 2025 <span>Kartik Rawat</span>. All rights reserved. Made with ❤️</p>
 </footer>
 
+<!-- Chat Widget -->
+<div id="chatWidget" class="chat-widget">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar">🤖<div class="online-dot"></div></div>
+      <div>
+        <h4>Kartik's Assistant</h4>
+        <span class="chat-status" id="chatStatus">Online</span>
+      </div>
+    </div>
+    <div class="chat-header-btns">
+      <button class="chat-minimize" id="chatMinimize">−</button>
+      <button class="chat-close" id="chatClose">✕</button>
+    </div>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input-area">
+    <div class="chat-input-wrap">
+      <input type="text" id="chatInput" placeholder="Ask about Kartik..."/>
+      <button class="send-btn" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Float Button -->
+<div id="chatFloatBtn" class="chat-float-btn">
+  <span id="chatNotification" class="chat-notification hidden">1</span>
+  <i id="chatFloatIcon" class="fas fa-comment-dots"></i>
+</div>
+
 <script>
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
@@ -125,5 +155,6 @@
     document.getElementById('navLinks').classList.toggle('open');
   }
 </script>
+<script src="/js/chat.js"></script>
 </body>
 </html>
