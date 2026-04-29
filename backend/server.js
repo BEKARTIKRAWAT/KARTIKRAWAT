@@ -40,6 +40,8 @@ app.use("/admin", express.static(path.join(__dirname, "../admin")));
 app.use("/", express.static(path.join(__dirname, "../frontend")));
 
 // Routes
+// Routes
+app.use("/api/admin/login", adminRoutes);
 app.use("/api/admin", authMiddleware, adminRoutes);
 app.use("/api/chat", chatRoutes);
 
