@@ -662,3 +662,44 @@ img { max-width: 100%; display: block; }
   .hero-btns { flex-direction: column; }
   .btn-primary, .btn-outline { justify-content: center; }
 }
+/* ============================================
+   DARK MODE
+   ============================================ */
+body.dark {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --text: #e2e8f0;
+  --text-light: #94a3b8;
+  --border: #334155;
+  --white: #1e293b;
+}
+
+body.dark .navbar {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid #334155;
+}
+
+body.dark .hero {
+  background: #0f172a;
+}
+
+body.dark .hero-card-main {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+body.dark .floating-card {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+body.dark .skill-strip {
+  background: #1e293b;
+}
+
+body.dark .footer {
+  background: #0f172a;
+  border-top: 1px solid #334155;
+}

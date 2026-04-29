@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="brand"><div class="brand-box"><span>KR</span></div><div class="brand-text"><span class="brand-top">KARTIK</span><span class="brand-bottom">RAWAT</span></div></a>
@@ -19,13 +18,15 @@
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button id="themeToggle" style="background:transparent;border:none;cursor:pointer;font-size:1.2rem;color:var(--text);margin-right:10px;">
+      <i id="themeIcon" class="fas fa-moon"></i>
+    </button>
     <a href="login.html" class="btn-login">Login</a>
     <div class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
-
 <div class="page-wrapper">
   <div class="skills-hero">
     <div class="skills-hero-inner">
@@ -34,16 +35,11 @@
       <p>Technologies and tools I work with</p>
     </div>
   </div>
-
   <div class="skills-content">
-
     <div class="skill-cat">
       <div class="skill-cat-header">
         <div class="cat-icon-box purple">🖥️</div>
-        <div>
-          <h2>Frontend Development</h2>
-          <p>Building beautiful user interfaces</p>
-        </div>
+        <div><h2>Frontend Development</h2><p>Building beautiful user interfaces</p></div>
       </div>
       <div class="skill-bars">
         <div class="skill-bar-item">
@@ -64,14 +60,10 @@
         </div>
       </div>
     </div>
-
     <div class="skill-cat">
       <div class="skill-cat-header">
         <div class="cat-icon-box green">⚙️</div>
-        <div>
-          <h2>Backend Development</h2>
-          <p>Building powerful server-side applications</p>
-        </div>
+        <div><h2>Backend Development</h2><p>Building powerful server-side applications</p></div>
       </div>
       <div class="skill-bars">
         <div class="skill-bar-item">
@@ -88,14 +80,10 @@
         </div>
       </div>
     </div>
-
     <div class="skill-cat">
       <div class="skill-cat-header">
         <div class="cat-icon-box blue">🗄️</div>
-        <div>
-          <h2>Database</h2>
-          <p>Data management and storage solutions</p>
-        </div>
+        <div><h2>Database</h2><p>Data management and storage solutions</p></div>
       </div>
       <div class="skill-bars">
         <div class="skill-bar-item">
@@ -108,14 +96,10 @@
         </div>
       </div>
     </div>
-
     <div class="skill-cat">
       <div class="skill-cat-header">
         <div class="cat-icon-box orange">🛠️</div>
-        <div>
-          <h2>Tools & Others</h2>
-          <p>Development tools I use daily</p>
-        </div>
+        <div><h2>Tools & Others</h2><p>Development tools I use daily</p></div>
       </div>
       <div class="tools-grid">
         <div class="tool-item">Git</div>
@@ -126,14 +110,11 @@
         <div class="tool-item">REST API</div>
       </div>
     </div>
-
   </div>
 </div>
-
 <footer class="footer">
   <p>© 2025 <span>Kartik Rawat</span>. All rights reserved. Made with ❤️</p>
 </footer>
-
 <script>
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
@@ -142,5 +123,6 @@
     document.getElementById('navLinks').classList.toggle('open');
   }
 </script>
+<script src="/js/theme.js"></script>
 </body>
 </html>
