@@ -29,6 +29,7 @@ connectDB();
 app.use(cors({
   origin: "*"
 }));
+app.set('trust proxy', 1);
 app.use(express.json());
 app.use(limiter);
 
