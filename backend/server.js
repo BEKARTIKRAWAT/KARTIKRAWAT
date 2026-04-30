@@ -10,6 +10,7 @@ import chatRoutes from "./routes/chatRoutes.js";
 import authMiddleware from "./middleware/auth.js";
 import limiter from "./middleware/rateLimit.js";
 import connectDB from "./config/db.js";
+import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
 
@@ -44,6 +45,7 @@ app.use("/", express.static(path.join(__dirname, "../frontend")));
 // Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/chat", chatRoutes);
+app.use("/api/contacts", contactRoutes);
 
 // Socket.io
 io.on("connection", (socket) => {
