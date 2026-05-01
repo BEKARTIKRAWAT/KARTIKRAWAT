@@ -11,6 +11,7 @@ import authMiddleware from "./middleware/auth.js";
 import limiter from "./middleware/rateLimit.js";
 import connectDB from "./config/db.js";
 import contactRoutes from "./routes/contactRoutes.js";
+import likeRoutes from "./routes/likeRoutes.js";
 
 dotenv.config();
 
@@ -41,11 +42,10 @@ app.use("/admin", express.static(path.join(__dirname, "../admin")));
 app.use("/", express.static(path.join(__dirname, "../frontend")));
 
 // Routes
-// Routes
-// Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/contacts", contactRoutes);
+app.use("/api/likes", likeRoutes);
 
 // Socket.io
 io.on("connection", (socket) => {
