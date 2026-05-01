@@ -1,135 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skills | Kartik Rawat</title>
-  <meta name="description" content="Kartik Rawat's technical skills - HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, SQL and more."/>
-<meta name="keywords" content="Kartik Rawat Skills, Web Development Skills, Node.js, MongoDB, JavaScript"/>
-<meta name="author" content="Kartik Rawat"/>
-<meta name="robots" content="index, follow"/>
-  <link rel="stylesheet" href="/css/style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="icon" type="image/png" href="/assets/images/icon-192.png"/>
-<link rel="apple-touch-icon" href="/assets/images/icon-192.png"/>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Kartik Rawat</title>
+  <meta name="description"
+    content="Kartik Rawat's technical skills - HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, SQL and more." />
+  <meta name="keywords" content="Kartik Rawat Skills, Web Development Skills, Node.js, MongoDB, JavaScript" />
+  <meta name="author" content="Kartik Rawat" />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="/assets/images/icon-192.png" />
+  <link rel="apple-touch-icon" href="/assets/images/icon-192.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPZ6DK20J3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-RPZ6DK20J3');
+  </script>
 </head>
+
 <body>
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="brand"><div class="brand-box"><span>KR</span></div><div class="brand-text"><span class="brand-top">KARTIK</span><span class="brand-bottom">RAWAT</span></div></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="skills.html" class="active">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button id="themeToggle" style="background:transparent;border:none;cursor:pointer;font-size:1.2rem;color:var(--text);margin-right:10px;">
-      <i id="themeIcon" class="fas fa-moon"></i>
-    </button>
-    <a href="login.html" class="btn-login">Login</a>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-box"><span>KR</span></div>
+        <div class="brand-text"><span class="brand-top">KARTIK</span><span class="brand-bottom">RAWAT</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="themeToggle"
+        style="background:transparent;border:none;cursor:pointer;font-size:1.2rem;color:var(--text);margin-right:10px;">
+        <i id="themeIcon" class="fas fa-moon"></i>
+      </button>
+      <a href="login.html" class="btn-login">Login</a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+  <div class="page-wrapper">
+    <div class="skills-hero">
+      <div class="skills-hero-inner">
+        <div class="section-badge" style="background:rgba(67,233,123,0.15);color:#43E97B;">My Skills</div>
+        <h1>Technical <span>Skills</span></h1>
+        <p>Technologies and tools I work with</p>
+      </div>
+    </div>
+    <div class="skills-content">
+      <div class="skill-cat">
+        <div class="skill-cat-header">
+          <div class="cat-icon-box purple">🖥️</div>
+          <div>
+            <h2>Frontend Development</h2>
+            <p>Building beautiful user interfaces</p>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>HTML5</span><span>90%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width:90%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>CSS3</span><span>85%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width:85%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>JavaScript</span><span>80%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width:80%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>React.js (Basics)</span><span>55%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width:55%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-header">
+          <div class="cat-icon-box green">⚙️</div>
+          <div>
+            <h2>Backend Development</h2>
+            <p>Building powerful server-side applications</p>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Node.js</span><span>80%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill green" style="width:80%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Express.js</span><span>78%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill green" style="width:78%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>PHP</span><span>65%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill green" style="width:65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-header">
+          <div class="cat-icon-box blue">🗄️</div>
+          <div>
+            <h2>Database</h2>
+            <p>Data management and storage solutions</p>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>MongoDB</span><span>80%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill purple2" style="width:80%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>SQL</span><span>70%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill purple2" style="width:70%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-header">
+          <div class="cat-icon-box orange">🛠️</div>
+          <div>
+            <h2>Tools & Others</h2>
+            <p>Development tools I use daily</p>
+          </div>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-item">Git</div>
+          <div class="tool-item">GitHub</div>
+          <div class="tool-item">VS Code</div>
+          <div class="tool-item">Postman</div>
+          <div class="tool-item">Socket.io</div>
+          <div class="tool-item">REST API</div>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
-<div class="page-wrapper">
-  <div class="skills-hero">
-    <div class="skills-hero-inner">
-      <div class="section-badge" style="background:rgba(67,233,123,0.15);color:#43E97B;">My Skills</div>
-      <h1>Technical <span>Skills</span></h1>
-      <p>Technologies and tools I work with</p>
-    </div>
-  </div>
-  <div class="skills-content">
-    <div class="skill-cat">
-      <div class="skill-cat-header">
-        <div class="cat-icon-box purple">🖥️</div>
-        <div><h2>Frontend Development</h2><p>Building beautiful user interfaces</p></div>
-      </div>
-      <div class="skill-bars">
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>HTML5</span><span>90%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>CSS3</span><span>85%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>JavaScript</span><span>80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>React.js (Basics)</span><span>55%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:55%"></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-header">
-        <div class="cat-icon-box green">⚙️</div>
-        <div><h2>Backend Development</h2><p>Building powerful server-side applications</p></div>
-      </div>
-      <div class="skill-bars">
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>Node.js</span><span>80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill green" style="width:80%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>Express.js</span><span>78%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill green" style="width:78%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>PHP</span><span>65%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill green" style="width:65%"></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-header">
-        <div class="cat-icon-box blue">🗄️</div>
-        <div><h2>Database</h2><p>Data management and storage solutions</p></div>
-      </div>
-      <div class="skill-bars">
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>MongoDB</span><span>80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill purple2" style="width:80%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span>SQL</span><span>70%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill purple2" style="width:70%"></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-header">
-        <div class="cat-icon-box orange">🛠️</div>
-        <div><h2>Tools & Others</h2><p>Development tools I use daily</p></div>
-      </div>
-      <div class="tools-grid">
-        <div class="tool-item">Git</div>
-        <div class="tool-item">GitHub</div>
-        <div class="tool-item">VS Code</div>
-        <div class="tool-item">Postman</div>
-        <div class="tool-item">Socket.io</div>
-        <div class="tool-item">REST API</div>
-      </div>
-    </div>
-  </div>
-</div>
-<footer class="footer">
-  <p>© 2025 <span>Kartik Rawat</span>. All rights reserved. Made with ❤️</p>
-</footer>
-<script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-  });
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-</script>
-<script src="/js/theme.js"></script>
+  <footer class="footer">
+    <p>© 2025 <span>Kartik Rawat</span>. All rights reserved. Made with ❤️</p>
+  </footer>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+  <script src="/js/theme.js"></script>
 </body>
+
 </html>
