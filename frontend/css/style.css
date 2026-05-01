@@ -725,3 +725,17 @@ body.dark .footer {
 .like-btn i {
   margin-right: 4px;
 }
+
+/* Like Button Mobile Fix */
+@media (max-width: 768px) {
+  .like-btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-likes {
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+}
