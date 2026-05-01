@@ -159,19 +159,43 @@
   <script>
 const API = "https://kartikrawat.onrender.com";
 
+async function toggleLike(projectId) {
+  const liked = localStorage.getItem(`liked-${projectId}`);
+  
+  if (liked) {
+    alert('You have already liked this project! 😊');
+    return;
+  }
+
+  const res = await fetch(`${API}/api/likes/${projectId}`, { method: "POST" });
+  const data = await res.json();
+  document.getElementById(`count-${projectId}`).textContent = data.likes;
+  
+  // Like save karo
+  localStorage.setItem(`liked-${projectId}`, 'true');
+  
+  // Button style change karo
+  const btn = document.getElementById(`like-${projectId}`);
+  btn.style.background = '#ff6584';
+  btn.style.color = 'white';
+}
+
 async function loadLikes() {
   const res = await fetch(`${API}/api/likes`);
   const likes = await res.json();
   likes.forEach(p => {
     const el = document.getElementById(`count-${p.projectId}`);
     if (el) el.textContent = p.likes;
+    
+    // Agar pehle like kiya hai toh button fill karo
+    if (localStorage.getItem(`liked-${p.projectId}`)) {
+      const btn = document.getElementById(`like-${p.projectId}`);
+      if (btn) {
+        btn.style.background = '#ff6584';
+        btn.style.color = 'white';
+      }
+    }
   });
-}
-
-async function toggleLike(projectId) {
-  const res = await fetch(`${API}/api/likes/${projectId}`, { method: "POST" });
-  const data = await res.json();
-  document.getElementById(`count-${projectId}`).textContent = data.likes;
 }
 
 loadLikes();
